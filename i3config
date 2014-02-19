@@ -1,0 +1,127 @@
+# This configuration uses Mod1 and Mod4. Make sure they are mapped properly using xev(1)
+# and xmodmap(1). Usually, Mod1 is Alt (Alt_L) and Mod4 is Windows (Super_L)
+
+# ISO 10646 = Unicode
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+# Use Mouse+Mod1 to drag floating windows to their wanted position
+floating_modifier Mod4
+
+# Fullscreen (Mod1+f)
+bindcode Mod4+41 fullscreen
+
+# Stacking (Mod1+h)
+bindcode Mod4+43 layout stacking
+
+# Tabbed (Mod1+g)
+bindcode Mod4+42 layout tabbed
+
+# Default (Mod1+e)
+bindcode Mod4+26 layout default
+
+# Toggle tiling/floating of the current window (Mod1+Shift+Space)
+bindcode Mod4+Shift+65 floating toggle
+
+# Go into the tiling layer / floating layer, depending on whether
+# the current window is tiling / floating (Mod1+t)
+bindcode Mod4+28 focus mode_toggle
+
+# Focus (Mod1+j/k/l/;)
+bindcode Mod4+44 focus left
+bindcode Mod4+45 focus down
+bindcode Mod4+46 focus up
+bindcode Mod4+47 focus right
+# (alternatively, you can use the cursor keys:)
+bindsym Mod4+Left focus left
+bindsym Mod4+Down focus down
+bindsym Mod4+Up focus up
+bindsym Mod4+Right focus right
+
+# Focus Container (Mod4+j/k/l/;)
+bindcode Mod1+44 focus parent; focus left
+bindcode Mod1+45 focus parent; focus down
+bindcode Mod1+46 focus parent; focus up
+bindcode Mod1+47 focus parent; focus right
+# (alternatively, you can use the cursor keys:)
+#bindsym Mod1+Left focus parent; focus left
+#bindsym Mod1+Down focus parent; focus down
+#bindsym Mod1+Up focus parent; focus up
+#bindsym Mod1+Right focus parent; focus right
+
+# Snap (Mod1+Control+j/k/l/;)
+bindcode Mod4+Control+44 layout stacking
+bindcode Mod4+Control+45 layout stacking
+bindcode Mod4+Control+46 layout stacking
+bindcode Mod4+Control+47 layout stacking
+# (alternatively, you can use the cursor keys:)
+bindsym Mod4+Control+Left layout stacking
+bindsym Mod4+Control+Down layout stacking
+bindsym Mod4+Control+Up layout stacking
+bindsym Mod4+Control+Right layout stacking
+
+# Move (Mod1+Shift+j/k/l/;)
+bindcode Mod4+Shift+44 move left
+bindcode Mod4+Shift+45 move down
+bindcode Mod4+Shift+46 move up
+bindcode Mod4+Shift+47 move right
+# (alternatively, you can use the cursor keys:)
+bindsym Mod4+Shift+Left move left
+bindsym Mod4+Shift+Down move down
+bindsym Mod4+Shift+Up move up
+bindsym Mod4+Shift+Right move right
+
+# Move Container (Mod4+Shift+j/k/l/;)
+bindcode Mod1+Shift+44 focus parent; move left
+bindcode Mod1+Shift+45 focus parent; move down
+bindcode Mod1+Shift+46 focus parent; move up
+bindcode Mod1+Shift+47 focus parent; move right
+
+# Workspaces (Mod1+1/2/…)
+bindcode Mod4+10 workspace 1
+bindcode Mod4+11 workspace 2
+bindcode Mod4+12 workspace 3
+bindcode Mod4+13 workspace 4
+bindcode Mod4+14 workspace 5
+bindcode Mod4+15 workspace 6
+bindcode Mod4+16 workspace 7
+bindcode Mod4+17 workspace 8
+bindcode Mod4+18 workspace 9
+bindcode Mod4+19 workspace 10
+
+# Move to Workspaces
+bindcode Mod4+Shift+10 move workspace 1
+bindcode Mod4+Shift+11 move workspace 2
+bindcode Mod4+Shift+12 move workspace 3
+bindcode Mod4+Shift+13 move workspace 4
+bindcode Mod4+Shift+14 move workspace 5
+bindcode Mod4+Shift+15 move workspace 6
+bindcode Mod4+Shift+16 move workspace 7
+bindcode Mod4+Shift+17 move workspace 8
+bindcode Mod4+Shift+18 move workspace 9
+bindcode Mod4+Shift+19 move workspace 10
+
+# Mod1+Enter starts a new terminal
+bindcode Mod4+36 exec /usr/bin/urxvtc
+
+# Mod1+Shift+q kills the current client
+bindcode Mod4+25 kill
+
+# Mod1+v starts dmenu and launches the selected application
+# for now, we don’t have a launcher of our own.
+bindcode Mod4+65 exec /usr/bin/dmenu_run
+bindcode 122 exec exec amixer set Master 10dB- unmute
+bindcode 123 exec exec amixer set Master 10dB+ unmute
+
+# Mod1+Shift+e exits i3
+bindcode Mod1+Shift+26 exit
+
+# Mod1+Shift+r restarts i3 inplace
+bindcode Mod1+Shift+27 restart
+
+# The IPC interface allows programs like an external workspace bar
+# (i3-wsbar) or i3-msg (can be used to "remote-control" i3) to work.
+ipc-socket ~/.i3/ipc.sock
+
+bar {
+  status_command i3status
+}

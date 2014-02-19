@@ -1,0 +1,12 @@
+[user]
+  name = Adrian Fraiha
+  email = aef@catch-colt.com
+[merge]
+  tool = vimdiff
+[diff]
+  tool = vimdiff
+[core]
+  ignorecase = false
+  editor = /usr/bin/vim
+[github]
+  user = aef-
