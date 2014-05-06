@@ -5,8 +5,21 @@
   tool = vimdiff
 [diff]
   tool = vimdiff
+  renames = copy
 [core]
   ignorecase = false
   editor = /usr/bin/vim
+  whitespace = space-before-tab,trailing-space,cr-at-eol
 [github]
   user = aef-
+[pack]
+  threads = 0
+[push]
+  default = simple
+[credential]
+  helper = osxkeychain
+[alias]
+  ci = commit
+  co = checkout
+  st = status -sb
+  nuke = !git checkout -f && git clean -f -d
