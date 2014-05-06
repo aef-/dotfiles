@@ -29,7 +29,7 @@ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | 
 chsh -s $(which zsh)
 installScript $PWD/i3config ~/.i3/config
 #installScript $PWD/bashrc ~/.bashrc
-#installScript $PWD/xinitrc ~/.xinitrc
+installScript $PWD/xinitrc ~/.xinitrc
 installScript $PWD/zshrc ~/.zshrc
 installScript $PWD/vimrc ~/.vimrc
 installScript $PWD/vim ~/.vim
