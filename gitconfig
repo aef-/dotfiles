@@ -5,19 +5,19 @@
   tool = vimdiff
 [diff]
   tool = vimdiff
-  renames = copy
+	renames = copy
 [core]
-  ignorecase = false
+	ignorecase = false
   editor = /usr/bin/vim
-  whitespace = space-before-tab,trailing-space,cr-at-eol
+	whitespace = space-before-tab,trailing-space,cr-at-eol
 [github]
   user = aef-
 [pack]
-  threads = 0
+	threads = 0
 [push]
-  default = simple
+	default = simple
 [credential]
-  helper = osxkeychain
+	helper = osxkeychain
 [alias]
   ci = commit
   co = checkout
