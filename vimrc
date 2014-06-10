@@ -11,7 +11,12 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'gmarik/sudo-gui.vim'
+Bundle 'moll/vim-node'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'pangloss/vim-javascript'
 Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-surround'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'kien/ctrlp.vim'
 Bundle '29decibel/vim-stringify'
