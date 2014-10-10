@@ -8,7 +8,7 @@
 	renames = copy
 [core]
 	ignorecase = false
-  editor = /usr/bin/vim
+  editor = /usr/local/bin/vim 
 	whitespace = space-before-tab,trailing-space,cr-at-eol
 [github]
   user = aef-
