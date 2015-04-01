@@ -36,6 +36,8 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'vim-scripts/grep.vim'
 NeoBundle 'vim-scripts/CSApprox'
+NeoBundleLazy 'klen/python-mode'
+
 
 "" Snippets
 NeoBundle 'SirVer/ultisnips'
@@ -87,9 +89,10 @@ filetype plugin on
 filetype indent on
 
 "" Tabs. May be overriten by autocmd rules
-set tabstop=4
-set softtabstop=0
-set shiftwidth=4
+filetype plugin indent on
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 "" Map leader to ,
@@ -107,7 +110,6 @@ set smartcase
 "" Encoding
 set bomb
 set ttyfast
-set binary
 
 "" Directories for swp files
 set nobackup
@@ -348,3 +350,7 @@ let g:javascript_enable_domhtmlcss = 1
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+"" GCC
+noremap <Leader>f : !gcc % && ./a.out <CR>
+
