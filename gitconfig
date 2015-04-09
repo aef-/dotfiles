@@ -21,6 +21,7 @@
 [alias]
   ci = commit
   cam = commit -a -m 
+  pm = push origin master
   co = checkout
   st = status -sb
   nuke = !git checkout -f && git clean -f -d
