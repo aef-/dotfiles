@@ -20,6 +20,7 @@
 	helper = osxkeychain
 [alias]
   ci = commit
+  cam = commit -a -m 
   co = checkout
   st = status -sb
   nuke = !git checkout -f && git clean -f -d
