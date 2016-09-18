@@ -22,18 +22,12 @@ function installScript( )
 }
 
 PWD=`pwd`
-mkdir -p ~/.i3
 mkdir -p ./vim/swap
 git clone https://github.com/gmarik/vundle.git ./vim/bundle/vundle
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 chsh -s $(which zsh)
-installScript $PWD/i3config ~/.i3/config
-#installScript $PWD/bashrc ~/.bashrc
-installScript $PWD/xinitrc ~/.xinitrc
 installScript $PWD/zshrc ~/.zshrc
 installScript $PWD/vimrc ~/.vimrc
 installScript $PWD/vim ~/.vim
-installScript $PWD/Xdefaults ~/.Xdefaults
-installScript $PWD/ctags ~/.ctags
-installScript $PWD/hgrc ~/.hgrc
+installScript $PWD/keymap.cson ~/.atom/keymap.cson
 installScript $PWD/gitconfig ~/.gitconfig

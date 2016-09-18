@@ -30,14 +30,22 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'moll/vim-node'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
+NeoBundle 'blockloop/vim-swigjs'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'vim-scripts/grep.vim'
 NeoBundle 'vim-scripts/CSApprox'
-NeoBundleLazy 'klen/python-mode'
-
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'SirVer/ultisnips'
+"NeoBundleLazy 'klen/python-mode'
+NeoBundle 'elixir-lang/vim-elixir'
+"NeoBundle 'slashmili/alchemist.vim'
+NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'mxw/vim-jsx'
 
 "" Snippets
 NeoBundle 'SirVer/ultisnips'
@@ -72,10 +80,13 @@ NeoBundleCheck
 "*****************************************************************************
 "" Basic Setup
 "*****************************************************************************"
+"
+
 "" Encoding
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
+set nobomb
 
 "" Unleash all VIM power
 set nocompatible
@@ -94,6 +105,8 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+
+"""set textwidth=72"""
 
 "" Map leader to ,
 let mapleader=','
@@ -129,7 +142,8 @@ set number
 
 let no_buffers_menu=1
 highlight BadWhitespace ctermbg=red guibg=red
-colorscheme molokai
+"colorscheme molokai
+colorscheme adaryn
 
 set mousemodel=popup
 set t_Co=256
@@ -282,7 +296,7 @@ noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 "" ctrlp.vim
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,.pyc,__pycache__
+set wildignore+=*/tmp/*,*/node_modules/*,*.o,*.obj,.git,*.rbc,.pyc,__pycache__,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tox)$'
 let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
 let g:ctrlp_use_caching = 0
@@ -305,6 +319,7 @@ let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute " ,"trimming empty <", "unescaped &" , "lacks \"action", "is not recognized!", "discarding unexpected"]
 
 " vim-airline
 let g:airline_enable_syntastic = 1
