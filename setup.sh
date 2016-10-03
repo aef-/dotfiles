@@ -23,11 +23,9 @@ function installScript( )
 
 PWD=`pwd`
 mkdir -p ./vim/swap
-git clone https://github.com/gmarik/vundle.git ./vim/bundle/vundle
-curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 chsh -s $(which zsh)
 installScript $PWD/zshrc ~/.zshrc
 installScript $PWD/vimrc ~/.vimrc
-installScript $PWD/vim ~/.vim
 installScript $PWD/keymap.cson ~/.atom/keymap.cson
 installScript $PWD/gitconfig ~/.gitconfig
+installScript $PWD/hyperterm.js ~/.hyperterm.js
