@@ -44,8 +44,9 @@ NeoBundle 'SirVer/ultisnips'
 "NeoBundleLazy 'klen/python-mode'
 NeoBundle 'elixir-lang/vim-elixir'
 "NeoBundle 'slashmili/alchemist.vim'
-NeoBundle 'Valloric/YouCompleteMe'
+"NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'mxw/vim-jsx'
+NeoBundle 'mirlord/vim-dust'
 
 "" Snippets
 NeoBundle 'SirVer/ultisnips'
@@ -101,9 +102,9 @@ filetype indent on
 
 "" Tabs. May be overriten by autocmd rules
 filetype plugin indent on
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 
 """set textwidth=72"""
@@ -142,8 +143,6 @@ set number
 
 let no_buffers_menu=1
 highlight BadWhitespace ctermbg=red guibg=red
-"colorscheme molokai
-colorscheme adaryn
 
 set mousemodel=popup
 set t_Co=256
@@ -352,10 +351,11 @@ nnoremap <silent> <leader><space> :noh<cr>
 vmap < <gv
 vmap > >gv
 
+
 "" Open current line on GitHub
 noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR><CR>
 "" Custom configs
-
+au BufNewFile,BufRead *.es6 set ft=javascript
 
 
 let g:javascript_enable_domhtmlcss = 1
