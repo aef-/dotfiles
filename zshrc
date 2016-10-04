@@ -1,14 +1,16 @@
 source "${HOME}/.zgen/zgen.zsh"
+if ! zgen saved; then
+    zgen prezto editor key-bindings 'vi'
+    zgen prezto prompt theme 'spidergiggle'
 
-#zgen prezto editor key-bindings 'vim'
-zgen prezto prompt theme 'paradox'
+    # prezto and modules
+    zgen prezto
+    zgen prezto git
+    zgen prezto command-not-found
+    zgen prezto syntax-highlighting
+    zgen prezto history-substring-search
+fi
 
-# prezto and modules
-zgen prezto
-zgen prezto git
-zgen prezto command-not-found
-zgen prezto syntax-highlighting
-zgen prezto history-substring-search
 
 export EDITOR=/usr/bin/vim
 export HISTIGNORE="&:ls:[bf]g:exit"

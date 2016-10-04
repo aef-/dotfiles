@@ -1,0 +1,55 @@
+#
+# A single line theme with Git information on the left and time on the right.
+#
+# Authors:
+#   aef <aef@fastmail.com>
+#   Kyle West <kswest@gmail.com>
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+# Features:
+#   - Indicates dirty Git repository.
+#   - Indicates vi modes.
+#   - Indicates execution time.
+#
+
+function prompt_spidergiggle_precmd {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+
+  # Get Git repository information.
+  if (( $+functions[git-info] )); then
+    git-info
+  fi
+}
+
+function prompt_spidergiggle_setup {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+  prompt_opts=(cr percent subst)
+
+  # Load required functions.
+  autoload -Uz add-zsh-hook
+
+  # Add hook for calling git-info before each command.
+  add-zsh-hook precmd prompt_spidergiggle_precmd
+
+  # Set editor-info parameters.
+  zstyle ':prezto:module:editor:info:completing' format '%B%F{red}...%f%b'
+  zstyle ':prezto:module:editor:info:keymap:primary' format "%B%F{green}❯%f%b"
+  zstyle ':prezto:module:editor:info:keymap:alternate' format "%B%F{magenta}❮%f%b"
+
+  # Set git-info parameters.
+  zstyle ':prezto:module:git:info' verbose 'no'
+  zstyle ':prezto:module:git:info:branch' format '%F{yellow}%b%f'
+  zstyle ':prezto:module:git:info:dirty' format '%B%F{red}!%f%b'
+  zstyle ':prezto:module:git:info:indexed' format ' '
+  zstyle ':prezto:module:git:info:unindexed' format ' '
+  zstyle ':prezto:module:git:info:untracked' format ' '
+  zstyle ':prezto:module:git:info:keys' format 'prompt' '- %b%D '
+
+  # Define prompts.
+  PROMPT='%F{cyan}%c%f ${git_info:+${(e)git_info[prompt]}}${editor_info[keymap]} '
+  RPROMPT='%F{magenta}%D{%L:%M:%S %p}'
+}
+
+prompt_spidergiggle_setup "$@"
