@@ -12,6 +12,7 @@ if ! zgen saved; then
 fi
 
 
+alias ls="ls -G"
 export EDITOR=/usr/bin/vim
 export HISTIGNORE="&:ls:[bf]g:exit"
 export CDPATH=".:~:~/Dev:~/Downloads"
@@ -20,3 +21,4 @@ alias bower='noglob bower'
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
 export PATH="/usr/local/sbin:$PATH"
 source /opt/nyt/sbx/.nyt
+

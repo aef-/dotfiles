@@ -48,7 +48,8 @@ function prompt_spidergiggle_setup {
   zstyle ':prezto:module:git:info:keys' format 'prompt' '- %b%D '
 
   # Define prompts.
-  PROMPT='%F{cyan}%c%f ${git_info:+${(e)git_info[prompt]}}${editor_info[keymap]} '
+  PROMPT='
+%F{cyan}%c%f ${git_info:+${(e)git_info[prompt]}}${editor_info[keymap]} '
   RPROMPT='%F{magenta}%D{%L:%M:%S %p}'
 }
 
