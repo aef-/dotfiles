@@ -36,3 +36,6 @@
 'atom-workspace atom-text-editor:not([mini])':
   'shift-enter': 'editor:newline-below'
   'cmd-enter': 'editor:newline-above'
+
+'atom-text-editor':
+  'cmd-alt-l': 'editor:auto-indent'
