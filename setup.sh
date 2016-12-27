@@ -23,7 +23,7 @@ function installScript( )
 
 PWD=`pwd`
 mkdir -p ./vim/swap
-chsh -s $(which zsh)
+git submodule update --init --recursive
 installScript $PWD/zgen ~/.zgen
 installScript $PWD/zshrc ~/.zshrc
 installScript $PWD/vimrc ~/.vimrc
@@ -31,3 +31,4 @@ installScript $PWD/keymap.cson ~/.atom/keymap.cson
 installScript $PWD/gitconfig ~/.gitconfig
 installScript $PWD/hyperterm.js ~/.hyperterm.js
 installScript $PWD/prompt_spidergiggle_setup ~/zgen/sorin-ionescu/prezto-master/modules/prompt/functions
+chsh -s $(which zsh)
