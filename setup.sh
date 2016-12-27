@@ -29,6 +29,6 @@ installScript $PWD/zshrc ~/.zshrc
 installScript $PWD/vimrc ~/.vimrc
 installScript $PWD/keymap.cson ~/.atom/keymap.cson
 installScript $PWD/gitconfig ~/.gitconfig
-installScript $PWD/hyperterm.js ~/.hyperterm.js
+installScript $PWD/hyper.js ~/.hyper.js
 installScript $PWD/prompt_spidergiggle_setup ~/zgen/sorin-ionescu/prezto-master/modules/prompt/functions
 chsh -s $(which zsh)
