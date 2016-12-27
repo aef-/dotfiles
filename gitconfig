@@ -2,9 +2,9 @@
   name = Adrian Fraiha
   email = aef@fastmail.com
 [merge]
-  tool = vimdiff
+	tool = meld
 [diff]
-  tool = vimdiff
+	tool = diffmerge
 	renames = copy
 [core]
 	ignorecase = false
