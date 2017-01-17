@@ -6,18 +6,16 @@ function installScript( )
   if [ -f $2 ] || [ -L $2 ]; then
     read -p "$2 exists, overwrite?  " yn
     case $yn in
-      [Yy]* ) 
+      [Yy]* )
         echo "Moving $2 to $2.orig"
         mv $2 $2.orig
-        ln -s $1 $2 
-        break;;
+        ln -s $1 $2
       * )
         echo "Not installing $1"
-        break;;
     esac
   else
     echo "Installing new $1"
-    ln -s $1 $2 
+    ln -s $1 $2
   fi
 }
 
@@ -31,4 +29,5 @@ installScript $PWD/keymap.cson ~/.atom/keymap.cson
 installScript $PWD/gitconfig ~/.gitconfig
 installScript $PWD/hyper.js ~/.hyper.js
 installScript $PWD/prompt_spidergiggle_setup ~/zgen/sorin-ionescu/prezto-master/modules/prompt/functions
+installScript $PWD/spacemacs ~/.spacemacs
 chsh -s $(which zsh)
