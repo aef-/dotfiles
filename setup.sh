@@ -10,6 +10,7 @@ function installScript( )
         echo "Moving $2 to $2.orig"
         mv $2 $2.orig
         ln -s $1 $2
+        break;;
       * )
         echo "Not installing $1"
     esac
