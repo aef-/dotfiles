@@ -21,7 +21,7 @@ export CDPATH=".:~:~/Dev:~/Downloads"
 alias bower='noglob bower'
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
-export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.cargo/env:/usr/local/sbin:$PATH"
 export HISTSIZE=10000
 export SAVEHIST=$HISTSIZE
 source /opt/nyt/sbx/.nyt
