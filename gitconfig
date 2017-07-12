@@ -1,27 +1,32 @@
 [user]
-  name = Adrian Fraiha
-  email = aef@fastmail.com
+    name = Adrian Fraiha
+    email = aef@fastmail.com
 [merge]
-	tool = meld
+    tool = meld
 [diff]
-	tool = diffmerge
-	renames = copy
+    tool = diffmerge
+    renames = copy
 [core]
-	ignorecase = false
-  editor = /usr/local/bin/vim 
-	whitespace = space-before-tab,trailing-space,cr-at-eol
+    ignorecase = false
+    editor = /usr/local/bin/vim 
+    whitespace = space-before-tab,trailing-space,cr-at-eol
 [github]
-  user = aef-
+    user = aef-
 [pack]
-	threads = 0
+    threads = 0
 [push]
-	default = simple
+    default = simple
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 [alias]
-  ci = commit
-  cam = commit -a -m 
-  pm = push origin master
-  co = checkout
-  st = status -sb
-  nuke = !git checkout -f && git clean -f -d
+    ci = commit
+    cam = commit -a -m 
+    pm = push origin master
+    co = checkout
+    st = status -sb
+    nuke = !git checkout -f && git clean -f -d
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
