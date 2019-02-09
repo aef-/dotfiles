@@ -1,0 +1,34 @@
+# This is Git's per-user configuration file.
+[user]
+    name = Adrian Fraiha
+    email = afraiha@makespace.com
+[merge]
+    tool = meld
+[diff]
+    tool = diffmerge
+    renames = copy
+[core]
+    ignorecase = false
+    editor = vim 
+    whitespace = space-before-tab,trailing-space,cr-at-eol
+[github]
+    user = aef-
+[pack]
+    threads = 0
+[push]
+    default = simple
+[credential]
+    helper = osxkeychain
+[alias]
+    ci = commit
+    cam = commit -a -m 
+    pm = push origin master
+    co = checkout
+    st = status -sb
+    nuke = !git checkout -f && git clean -f -d
+    undo = git reset --soft HEAD^
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+required = true
