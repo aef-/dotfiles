@@ -1,0 +1,46 @@
+theme = "solarized-dark"
+icons = "awesome"
+
+[[block]]
+block = "xrandr"
+icons = false
+resolution = false
+interval = 2
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{mem_used_percents}"
+format_swap = "{swap_used_percents}"
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
+block = "load"
+interval = 1
+format = "{1m}"
+
+[[block]]
+driver = "pulseaudio"
+block = "sound"
+format = "{volume}"
+on_click = "pavucontrol"
+
+[[block]]
+block = "networkmanager"
+on_click = "kitty -e nmtui"
+interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
+interface_name_include = []
+ap_format = "{ssid}"
+
+[[block]]
+block = "time"
+interval = 5
+format = "%a %d/%m %R"
+
+[[block]]
+block = "weather"
+format = "{weather} {temp}"
+service = { name = "openweathermap", api_key = "d1d86792b2c707067b81543a47f443e8", city_id = "5110302", units = "metric" }
