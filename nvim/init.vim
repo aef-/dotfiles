@@ -39,7 +39,7 @@ let g:Lf_PreviewInPopup = 1
 let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "DejaVu Sans Mono for Powerline" }
 let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
 
-nnoremap <silent> <leader>e :FZF -m<CR>o
+nnoremap <silent> <leader>e :FZF -m<CR>
 
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
 set grepprg=rg\ --vimgrep
@@ -192,6 +192,14 @@ lua <<EOF
       on_attach = on_attach,
       capabilities = capabilities
   }
+
+  require('lspconfig').erlangls.setup {
+      cmd = { "erlang_ls" },
+      on_attach = on_attach,
+      capabilities = capabilities
+  }
+
+
 
   require'nvim-treesitter.configs'.setup {
       ensure_installed = { "c", "rust", "sql", "cmake", "elixir", "heex", "erlang", "fish", "html", "javascript", "json", "julia", "lua", "make", "python", "toml", "yaml" },
