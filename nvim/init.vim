@@ -179,7 +179,13 @@ lua <<EOF
   end
 
   -- autocomplete
-  require("mason").setup()
+  require("mason").setup({
+    providers = {
+        "mason.providers.client",
+        "mason.providers.registry-api"
+    },
+    log_level = vim.log.levels.DEBUG
+  })
   require("mason-lspconfig").setup({
     ensure_installed = { "rust_analyzer", "clangd", "cmake", "cssls", "dockerls", "elixirls", "erlangls", "html", "jsonls", "julials", "pylsp", "tailwindcss", "tsserver", "vimls" }
   })
