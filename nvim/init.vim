@@ -1,7 +1,9 @@
 call plug#begin(expand('~/.config/nvim/plugged'))
+Plug 'ziglang/zig.vim'
 
 Plug 'tomasr/molokai'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'rcarriga/nvim-notify'
 
 Plug 'nvim-lualine/lualine.nvim'
