@@ -9,11 +9,19 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 
+"" Diff
+Plug 'nvim-lua/plenary.nvim'
+Plug 'sindrets/diffview.nvim'
+
+Plug 'airblade/vim-gitgutter'
+
+
+Plug 'nvim-lua/plenary.nvim'
+
 "" Autocomplete
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
-Plug 'neovim/nvim-lspconfig'
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -24,8 +32,12 @@ Plug 'hrsh7th/nvim-cmp'
 
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
+
+Plug 'ziglang/zig.vim'
+
 call plug#end()
 
+set cc=80
 colorscheme molokai
 hi Normal ctermbg=none guibg=none
 let mapleader = ","
@@ -208,7 +220,7 @@ lua <<EOF
 
 
   require'nvim-treesitter.configs'.setup {
-      ensure_installed = { "c", "rust", "sql", "cmake", "elixir", "heex", "erlang", "fish", "html", "javascript", "json", "julia", "lua", "make", "python", "toml", "yaml" },
+      ensure_installed = {"kotlin", "vim", "c", "rust", "sql", "cmake", "elixir", "heex", "erlang", "fish", "html", "javascript", "json", "julia", "lua", "make", "python", "toml", "yaml" },
         sync_install = false,
         ignore_install = { },
         highlight = {
@@ -216,4 +228,5 @@ lua <<EOF
             disable = { },
         },
   }
+
 EOF
