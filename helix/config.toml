@@ -1,0 +1,24 @@
+ theme = "molokai"
+[editor]
+bufferline = "multiple"
+color-modes = true
+line-number = "relative"
+mouse = true
+rulers = [80]
+scrolloff = 8
+true-color = true
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+[editor.statusline]
+left = ["mode", "file-name", "spinner"]
+center = ["position", "separator", "total-line-numbers", "spacer", "diagnostics"]
+right = ["position-percentage", "file-type", "separator", "file-line-ending", "separator", "selections", "file-encoding"]
+separator = "|"
+mode.insert = "INSERT"
+mode.normal = "NORMAL"
+mode.select = "SELECT"
+
+[keys.normal.space]
+o = "file_picker_in_current_buffer_directory"

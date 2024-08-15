@@ -7,6 +7,8 @@ if status is-interactive
     set PATH $PATH $HOME/.cargo/bin
     set PATH $PATH $HOME/Dev/rebar3
     ulimit -n 65536
+    #. $HOME/.asdf/plugins/java/set-java-home.fish
+
     fzf --fish | source
 end
 

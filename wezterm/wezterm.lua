@@ -9,6 +9,16 @@ end)
 
 config.keys = {
   {
+    key = 'l',
+    mods = 'CTRL',
+    action = act.MoveTabRelative(1)
+  },  
+  {
+    key = 'h',
+    mods = 'CTRL',
+    action = act.MoveTabRelative(-1)
+  },
+  {
     key = '9',
     mods = 'ALT',
     action = act.ShowLauncherArgs { flags = 'FUZZY|WORKSPACES' },
@@ -30,7 +40,7 @@ wezterm.on('gui-startup', function(cmd)
   local project_dir = wezterm.home_dir .. '/'
   local tab, build_pane, window = mux.spawn_window {
     workspace = 'coding',
-    cwd = project_dir,
+    cwd = project_dir .. '/Dev',
     args = args,
   }
   window:gui_window():maximize()
